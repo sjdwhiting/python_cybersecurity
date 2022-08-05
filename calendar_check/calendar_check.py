@@ -15,5 +15,6 @@ for address in directory:
     r = requests.get('https://calendar.google.com/calendar/u/0/htmlembed?src=' + address.strip())
 
     if r.status_code == 200:
+        print(address + " is public")
         public_calendars_file.write(address)
         public_calendars_file.write('https://calendar.google.com/calendar/u/0/htmlembed?src=' + address + '\n')
